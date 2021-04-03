@@ -4,8 +4,8 @@ Easily render a wrapping block of text in a HTML Canvas Element.
 
 ## Motivation
 
-- There are ways to render lines of text in canvas, but not a wrapping text block. This solves this problem.
-- There are some packages out there that do this, but this implementation also adds the ability to specify the `lineHeight` and other configurations.
+- There are ways to render individual lines of text in [canvas](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement), but not a wrapping text block. This package solves this problem.
+- There are some packages out there that do this in a way, but this implementation adds the ability to specify the `lineHeight` and other styling configurations.
 
 ## Usage
 
@@ -20,6 +20,10 @@ npm install canvas-text-block
 ### Usage
 
 ```js
+import CanvasTextBlock from 'canvas-text-block'
+
+...
+
 // Create your canvas
 const canvas = document.createElement("canvas");
 canvas.width = 1000;
