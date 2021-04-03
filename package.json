@@ -2,11 +2,12 @@
   "name": "canvas-text-block",
   "version": "0.0.1",
   "description": "Easily render a wrapping block of text in an HTML Canvas Element.",
-  "main": "dist/index.js",
+  "main": "dist/canvasTextBlock.js",
   "scripts": {
     "test": "jest",
     "dev": "ncc build ./src/canvasTextBlock.ts --minify --out dist --target es2015 --watch",
-    "build": "ncc build ./src/canvasTextBlock.ts --minify --out dist --target es2015",
+    "rename-ncc-output-file": "node -e \"require('fs').rename('dist/index.js', 'dist/canvasTextBlock.js', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\"",
+    "build": "ncc build ./src/canvasTextBlock.ts --minify --out dist --target es2015 && npm run rename-ncc-output-file",
     "format": "prettier --write ./src"
   },
   "keywords": [

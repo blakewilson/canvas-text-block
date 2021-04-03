@@ -8,6 +8,7 @@ const defaultOptions: CanvasTextBlockOptions = {
   weight: "normal",
   ellipsis: true,
   overflow: false,
+  backgroundColor: 'transparent'
 };
 
 export default defaultOptions;

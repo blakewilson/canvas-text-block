@@ -62,6 +62,10 @@ class CanvasTextBlock {
     }
 
     this.options = { ...defaultOptions, ..._options };
+
+    if(this.options.backgroundColor !== 'transparent') {
+      this.setBackgroundColor()
+    }
   }
 
   /**
@@ -84,6 +88,13 @@ class CanvasTextBlock {
   private getMaxLineCount = (): number => {
     return Math.floor(this.height / this.options.lineHeight);
   };
+
+  private setBackgroundColor = () => {
+    if(this.options.backgroundColor !== 'transparent') {
+      this.context.fillStyle = this.options.backgroundColor
+      this.context.fillRect(this.x, this.y, this.width, this.height)
+    }
+  }
 
   /**
    * Set the text in the text block region.
