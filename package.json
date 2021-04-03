@@ -13,7 +13,10 @@
   },
   "keywords": [
     "canvas",
-    "fillText"
+    "fillText",
+    "graphics",
+    "image",
+    "images"
   ],
   "author": "Blake Wilson (https://blake.id)",
   "license": "MIT",
