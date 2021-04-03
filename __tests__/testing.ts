@@ -6,17 +6,20 @@ test("it works", async () => {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
 
-  canvas.width = 2000;
-  canvas.height = 2000;
+  canvas.width = 1000;
+  canvas.height = 1000;
 
   if (context) {
-    context.fillStyle = "green";
-    context.fillRect(500, 500, 1000, 700);
+    context.fillStyle = "#fff";
+    context.fillRect(0, 0, 1000, 1000);
+
+    context.fillStyle = "red";
+    context.fillRect(20, 20, 960, 960);
   }
 
-  const instance = new CanvasTextBlock(context, 500, 500, 1000, 700, {
-    fontSize: 100,
-    lineHeight: 100 * 1.25,
+  const instance = new CanvasTextBlock(canvas, 20, 20, 960, 960, {
+    color: "#fff",
+    fontSize: 120,
   });
 
   instance.setTextBlock(

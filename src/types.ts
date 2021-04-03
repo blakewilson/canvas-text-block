@@ -4,5 +4,6 @@ export interface CanvasTextBlockOptions {
   fontSize: number;
   lineHeight: number;
   weight: string;
-  textAlign: CanvasTextAlign;
+  ellipsis: boolean;
+  overflow: boolean;
 }
