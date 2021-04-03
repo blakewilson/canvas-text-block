@@ -36,7 +36,7 @@ const canvasTextBlock = new CanvasTextBlock(
   100, // The y position of the canvas where the text block should start
   800, // The width of the text block
   800, // The height of the text block
-  options // An optional options object
+  options // An optional options config object
 );
 
 // Set the text
