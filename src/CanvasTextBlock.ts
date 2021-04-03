@@ -72,6 +72,13 @@ class CanvasTextBlock {
   };
 
   /**
+   * Get the options used for the canvas text block
+   */
+  private getOptions = () => {
+    return this.options
+  }
+
+  /**
    * Get the max amount of lines possible in the text block.
    */
   private getMaxLineCount = (): number => {
