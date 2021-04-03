@@ -2,6 +2,8 @@
 
 Easily render a wrapping block of text in a HTML Canvas Element.
 
+![Example image generated with canvas-text-block](/img/example-canvas.png)
+
 ## Motivation
 
 - There are ways to render individual lines of text in [canvas](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement), but not a wrapping text block. This package solves this problem.
@@ -53,7 +55,7 @@ const defaultOptions = {
   fontFamily: "arial", // Set the font family of the text block
   fontSize: 16, // Set the font size in pixels
   lineHeight: 24, // Set the text line height in pixels
-  backgroundColor: 'transparent', // Set a background color for the text block
+  backgroundColor: "transparent", // Set a background color for the text block
   weight: "normal", // Set the font weight
   overflow: false, // Should the package overflow lines that do not fit in the text block
   ellipsis: true, // If overflow is off, should the last word of the text block have an ellipsis?
