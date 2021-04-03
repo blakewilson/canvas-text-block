@@ -1,0 +1,23 @@
+{
+  "name": "canvas-text-block",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "ncc build ./src/canvasTextBlock.ts --minify --out dist --target es2015 --watch"
+  },
+  "keywords": [],
+  "author": "Blake Wilson",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.37",
+    "@vercel/ncc": "^0.27.0",
+    "canvas": "^2.7.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.2.3"
+  }
+}
