@@ -204,7 +204,7 @@ class CanvasTextBlock {
       lines = lines.slice(0, this.getMaxLineCount());
 
       // Add ellipsis to the last line if needed
-      if (this.options.ellipsis && lines.length > this.getMaxLineCount()) {
+      if (this.options.ellipsis && lines.length >= this.getMaxLineCount()) {
         let lastLine = appendEllipsisToLine(
           this.context,
           lines[lines.length - 1],
