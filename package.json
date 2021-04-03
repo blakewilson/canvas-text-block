@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Easily render a wrapping block of text in an HTML Canvas Element.",
   "main": "dist/canvasTextBlock.js",
+  "homepage": "https://github.com/blakewilson/canvas-text-block",
   "scripts": {
     "test": "jest",
     "dev": "ncc build ./src/canvasTextBlock.ts --minify --out dist --target es2015 --watch",
