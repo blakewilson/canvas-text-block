@@ -3,6 +3,10 @@ import composeFontString from "./utils/composeFontString";
 import calculateNextLineYPos from "./utils/calculateNextLineYPos";
 import appendEllipsisToLine from "./utils/appendEllipsisToLine";
 import defaultOptions from "./definitions/defaultConfig";
+import WidthLargerThanCanvasWidthError from "./errors/WidthLargerThanCanvasWidthError";
+import HeightLargerThanCanvasHeightError from "./errors/HeightLargerThanCanvasHeightError";
+import XPositionOutOfRange from "./errors/XPositionOutOfRange";
+import YPositionOutOfRange from "./errors/YPositionOutOfRange";
 
 class CanvasTextBlock {
   private canvas: HTMLCanvasElement;
@@ -36,8 +40,24 @@ class CanvasTextBlock {
     this.width = width;
     this.height = height;
 
-    // If the font size is provided without a line height, set it to 1.25
+    if (this.width > this.canvas.width) {
+      throw new WidthLargerThanCanvasWidthError();
+    }
+
+    if (this.height > this.canvas.height) {
+      throw new HeightLargerThanCanvasHeightError();
+    }
+
+    if (this.x < 0 || this.x > this.canvas.width) {
+      throw new XPositionOutOfRange();
+    }
+
+    if (this.y < 0 || this.y > this.canvas.height) {
+      throw new YPositionOutOfRange();
+    }
+
     if (_options?.fontSize && !_options.lineHeight) {
+      // If the font size is provided without a line height, set it to 1.25
       _options.lineHeight = _options.fontSize * 1.25;
     }
 
