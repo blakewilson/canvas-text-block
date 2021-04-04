@@ -5,8 +5,9 @@ import appendEllipsisToLine from "./utils/appendEllipsisToLine";
 import defaultOptions from "./definitions/defaultConfig";
 import WidthLargerThanCanvasWidthError from "./errors/WidthLargerThanCanvasWidthError";
 import HeightLargerThanCanvasHeightError from "./errors/HeightLargerThanCanvasHeightError";
-import XPositionOutOfRange from "./errors/XPositionOutOfRange";
-import YPositionOutOfRange from "./errors/YPositionOutOfRange";
+import XPositionOutOfRangeError from "./errors/XPositionOutOfRangeError";
+import YPositionOutOfRangeError from "./errors/YPositionOutOfRangeError";
+import CanvasContextIsNullError from "./errors/CanvasContextIsNullError";
 
 class CanvasTextBlock {
   private canvas: HTMLCanvasElement;
@@ -30,7 +31,7 @@ class CanvasTextBlock {
     const _context = this.canvas.getContext("2d");
 
     if (!_context) {
-      throw new Error("context required");
+      throw new CanvasContextIsNullError();
     }
 
     this.context = _context;
@@ -49,11 +50,11 @@ class CanvasTextBlock {
     }
 
     if (this.x < 0 || this.x > this.canvas.width) {
-      throw new XPositionOutOfRange();
+      throw new XPositionOutOfRangeError();
     }
 
     if (this.y < 0 || this.y > this.canvas.height) {
-      throw new YPositionOutOfRange();
+      throw new YPositionOutOfRangeError();
     }
 
     if (_options?.fontSize && !_options.lineHeight) {
@@ -63,8 +64,8 @@ class CanvasTextBlock {
 
     this.options = { ...defaultOptions, ..._options };
 
-    if(this.options.backgroundColor !== 'transparent') {
-      this.setBackgroundColor()
+    if (this.options.backgroundColor !== "transparent") {
+      this.setBackgroundColor();
     }
   }
 
@@ -79,8 +80,8 @@ class CanvasTextBlock {
    * Get the options used for the canvas text block
    */
   private getOptions = () => {
-    return this.options
-  }
+    return this.options;
+  };
 
   /**
    * Get the max amount of lines possible in the text block.
@@ -90,11 +91,11 @@ class CanvasTextBlock {
   };
 
   private setBackgroundColor = () => {
-    if(this.options.backgroundColor !== 'transparent') {
-      this.context.fillStyle = this.options.backgroundColor
-      this.context.fillRect(this.x, this.y, this.width, this.height)
+    if (this.options.backgroundColor !== "transparent") {
+      this.context.fillStyle = this.options.backgroundColor;
+      this.context.fillRect(this.x, this.y, this.width, this.height);
     }
-  }
+  };
 
   /**
    * Set the text in the text block region.
