@@ -1,15 +1,16 @@
 {
   "name": "canvas-text-block",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Easily render a wrapping block of text in an HTML Canvas Element.",
-  "main": "dist/canvasTextBlock.js",
+  "main": "dist/CanvasTextBlock.common.js",
+  "module": "dist/CanvasTextBlock.esm.js",
+  "browser": "dist/CanvasTextBlock.js",
+  "types": "dist/CanvasTextBlock.d.ts",
   "homepage": "https://github.com/blakewilson/canvas-text-block",
   "scripts": {
     "test": "jest",
-    "dev": "ncc build ./src/canvasTextBlock.ts --minify --out dist --target es2015 --watch",
-    "rename-ncc-output-file": "node -e \"require('fs').rename('dist/index.js', 'dist/canvasTextBlock.js', function(err) { if (err) console.log(err); console.log('File successfully renamed!') })\"",
-    "build": "ncc build ./src/canvasTextBlock.ts --minify --out dist --target es2015 && npm run rename-ncc-output-file",
-    "format": "prettier --write ./src"
+    "format": "prettier --write ./src",
+    "build": "rollup -c"
   },
   "keywords": [
     "canvas",
@@ -20,15 +21,30 @@
   ],
   "author": "Blake Wilson (https://blake.id)",
   "license": "MIT",
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "modules": false
+        }
+      ]
+    ]
+  },
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@rollup/plugin-babel": "^5.3.0",
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.37",
-    "@vercel/ncc": "^0.27.0",
     "canvas": "^2.7.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
+    "rollup": "^2.44.0",
+    "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^26.5.4",
+    "tslib": "^2.1.0",
     "typescript": "^4.2.3"
   }
 }
