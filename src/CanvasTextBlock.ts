@@ -8,6 +8,7 @@ import HeightLargerThanCanvasHeightError from "./errors/HeightLargerThanCanvasHe
 import XPositionOutOfRangeError from "./errors/XPositionOutOfRangeError";
 import YPositionOutOfRangeError from "./errors/YPositionOutOfRangeError";
 import CanvasContextIsNullError from "./errors/CanvasContextIsNullError";
+import CanvasNotOfHTMLCanvasElementTypeError from "./errors/CanvasNotOfHTMLCanvasElementTypeError";
 
 class CanvasTextBlock {
   private canvas: HTMLCanvasElement;
@@ -26,6 +27,10 @@ class CanvasTextBlock {
     height: number,
     _options?: Partial<CanvasTextBlockOptions>
   ) {
+    if (!(canvas instanceof HTMLCanvasElement)) {
+      throw new CanvasNotOfHTMLCanvasElementTypeError();
+    }
+
     this.canvas = canvas;
 
     const _context = this.canvas.getContext("2d");

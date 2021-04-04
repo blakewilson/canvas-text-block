@@ -10,7 +10,7 @@ test("it should fail with an y position larger than the canvas size", () => {
 
     expect(true).toBe(false);
   } catch (err) {
-    expect(err.name).toBe("YPositionOutOfRange");
+    expect(err.name).toBe("YPositionOutOfRangeError");
   }
 });
 
@@ -24,6 +24,6 @@ test("it should fail with a negative y position", () => {
 
     expect(true).toBe(false);
   } catch (err) {
-    expect(err.name).toBe("YPositionOutOfRange");
+    expect(err.name).toBe("YPositionOutOfRangeError");
   }
 });
