@@ -21,6 +21,10 @@
   ],
   "author": "Blake Wilson (https://blake.id)",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blakewilson/canvas-text-block.git"
+  },
   "babel": {
     "presets": [
       [
