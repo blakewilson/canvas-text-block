@@ -1,4 +1,8 @@
 import { CanvasTextBlockOptions } from "./types";
+import type {
+  Canvas as NodeCanvas,
+  CanvasRenderingContext2D as NodeCanvasRenderingContext2D,
+} from "canvas";
 import composeFontString from "./utils/composeFontString";
 import calculateNextLineYPos from "./utils/calculateNextLineYPos";
 import appendEllipsisToLine from "./utils/appendEllipsisToLine";
@@ -10,8 +14,8 @@ import YPositionOutOfRangeError from "./errors/YPositionOutOfRangeError";
 import CanvasContextIsNullError from "./errors/CanvasContextIsNullError";
 
 class CanvasTextBlock {
-  private canvas: HTMLCanvasElement;
-  private context: CanvasRenderingContext2D;
+  private canvas: HTMLCanvasElement | NodeCanvas;
+  private context: CanvasRenderingContext2D | NodeCanvasRenderingContext2D;
   private x: number;
   private y: number;
   private width: number;
@@ -34,7 +38,9 @@ class CanvasTextBlock {
       throw new CanvasContextIsNullError();
     }
 
-    this.context = _context;
+    this.context = _context as
+      | CanvasRenderingContext2D
+      | NodeCanvasRenderingContext2D;
 
     this.x = x;
     this.y = y;
