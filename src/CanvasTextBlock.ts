@@ -8,7 +8,6 @@ import HeightLargerThanCanvasHeightError from "./errors/HeightLargerThanCanvasHe
 import XPositionOutOfRangeError from "./errors/XPositionOutOfRangeError";
 import YPositionOutOfRangeError from "./errors/YPositionOutOfRangeError";
 import CanvasContextIsNullError from "./errors/CanvasContextIsNullError";
-import CanvasNotOfHTMLCanvasElementTypeError from "./errors/CanvasNotOfHTMLCanvasElementTypeError";
 
 class CanvasTextBlock {
   private canvas: HTMLCanvasElement;
@@ -17,20 +16,16 @@ class CanvasTextBlock {
   private y: number;
   private width: number;
   private height: number;
-  private options: CanvasTextBlockOptions;
+  private options: Required<CanvasTextBlockOptions>;
 
   constructor(
-    canvas: HTMLCanvasElement,
+    canvas: any,
     x: number,
     y: number,
     width: number,
     height: number,
-    _options?: Partial<CanvasTextBlockOptions>
+    options?: CanvasTextBlockOptions
   ) {
-    if (!(canvas instanceof HTMLCanvasElement)) {
-      throw new CanvasNotOfHTMLCanvasElementTypeError();
-    }
-
     this.canvas = canvas;
 
     const _context = this.canvas.getContext("2d");
@@ -62,12 +57,12 @@ class CanvasTextBlock {
       throw new YPositionOutOfRangeError();
     }
 
-    if (_options?.fontSize && !_options.lineHeight) {
+    if (options?.fontSize && !options.lineHeight) {
       // If the font size is provided without a line height, set it to 1.25
-      _options.lineHeight = _options.fontSize * 1.25;
+      options.lineHeight = options.fontSize * 1.25;
     }
 
-    this.options = { ...defaultOptions, ..._options };
+    this.options = { ...defaultOptions, ...options };
 
     if (this.options.backgroundColor !== "transparent") {
       this.setBackgroundColor();
@@ -242,5 +237,7 @@ class CanvasTextBlock {
     return lines;
   };
 }
+
+export { CanvasTextBlockOptions };
 
 export default CanvasTextBlock;

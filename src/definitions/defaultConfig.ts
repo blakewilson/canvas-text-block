@@ -1,6 +1,6 @@
 import { CanvasTextBlockOptions } from "../types";
 
-const defaultOptions: CanvasTextBlockOptions = {
+const defaultOptions: Required<CanvasTextBlockOptions> = {
   color: "#fff",
   fontFamily: "arial",
   fontSize: 16,
