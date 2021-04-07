@@ -84,6 +84,10 @@ const defaultOptions = {
 };
 ```
 
+## Examples
+
+For examples, please take a look in the [`examples`](https://github.com/blakewilson/canvas-text-block/tree/master/examples) directory.
+
 ## License
 
 This project is licensed under the [MIT license](https://github.com/blakewilson/canvas-text-block/blob/master/LICENSE).
