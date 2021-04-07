@@ -1,25 +1,25 @@
 import { babel } from "@rollup/plugin-babel";
+import pck from "./package.json";
 import typescript from "rollup-plugin-typescript2";
 import { DEFAULT_EXTENSIONS } from "@babel/core";
 
 const input = "./src/CanvasTextBlock.ts";
-const fileName = "CanvasTextBlock";
 
 export default {
   input,
   output: [
     {
       name: "CanvasTextBlock",
-      file: `dist/${fileName}.js`,
+      file: pck.browser,
       format: "umd",
     },
     {
-      file: `dist/${fileName}.common.js`,
+      file: pck.main,
       format: "cjs",
       exports: "auto",
     },
     {
-      file: `dist/${fileName}.esm.js`,
+      file: pck.module,
       format: "esm",
     },
   ],

@@ -2,7 +2,7 @@
 
 ![Example image generated with canvas-text-block](/img/example-canvas.png)
 
-Easily render a wrapping block of text in an HTML Canvas Element.
+Easily render a wrapping block of text in an HTML Canvas Element or [Node Canvas](https://www.npmjs.com/package/canvas)
 
 ## Motivation
 
