@@ -1,0 +1,13 @@
+{
+  "name": "canvas-text-block-node-canvas-example",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.7.0",
+    "canvas-text-block": "^1.0.4",
+    "lorem-ipsum": "^2.0.3"
+  }
+}
