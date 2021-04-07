@@ -1,5 +1,5 @@
 {
-  "name": "canvas-text-block-node-canvas-example",
+  "name": "node-canvas",
   "version": "1.0.0",
   "scripts": {
     "start": "node app.js"
