@@ -54,7 +54,7 @@ canvas.width = 1000;
 canvas.height = 1000;
 
 // Init the package.
-const canvasTextBlock = new CanvasTextBlock(
+const textBlock = new CanvasTextBlock(
   canvas, // An HTML Canvas Element
   100, // The x position of the canvas where the text block should start
   100, // The y position of the canvas where the text block should start
@@ -64,7 +64,7 @@ const canvasTextBlock = new CanvasTextBlock(
 );
 
 // Set the text
-canvasTextBlock.setTextBlock(
+textBlock.setText(
   "This text block will be rendered in the region specified in the constructor above"
 );
 ```

@@ -1,4 +1,4 @@
-import { CanvasTextBlockOptions } from "./types";
+import type { CanvasTextBlockOptions } from "./types";
 import type {
   Canvas as NodeCanvas,
   CanvasRenderingContext2D as NodeCanvasRenderingContext2D,
@@ -23,7 +23,7 @@ class CanvasTextBlock {
   private options: Required<CanvasTextBlockOptions>;
 
   constructor(
-    canvas: any,
+    canvas: HTMLCanvasElement | NodeCanvas,
     x: number,
     y: number,
     width: number,
@@ -75,23 +75,14 @@ class CanvasTextBlock {
     }
   }
 
-  /**
-   * Get the max width of the text block.
-   */
   private getTextBlockMaxWidth = () => {
     return this.width;
   };
 
-  /**
-   * Get the options used for the canvas text block
-   */
   private getOptions = () => {
     return this.options;
   };
 
-  /**
-   * Get the max amount of lines possible in the text block.
-   */
   private getMaxLineCount = (): number => {
     return Math.floor(this.height / this.options.lineHeight);
   };
@@ -103,10 +94,7 @@ class CanvasTextBlock {
     }
   };
 
-  /**
-   * Set the text in the text block region.
-   */
-  setTextBlock = (text: string) => {
+  setText = (text: string) => {
     const lines = this.getLinesFromText(text);
 
     // Loop through each line and render then to the canvas.

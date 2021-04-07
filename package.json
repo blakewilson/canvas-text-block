@@ -1,17 +1,18 @@
 {
   "name": "canvas-text-block",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Easily render a wrapping block of text in an HTML Canvas Element.",
   "main": "dist/CanvasTextBlock.common.js",
   "module": "dist/CanvasTextBlock.esm.js",
   "browser": "dist/CanvasTextBlock.js",
-  "types": "dist/CanvasTextBlock.d.ts",
+  "types": "types/CanvasTextBlock.d.ts",
   "homepage": "https://github.com/blakewilson/canvas-text-block",
   "files": [
     "src",
     "dist",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "types"
   ],
   "scripts": {
     "test": "jest",
