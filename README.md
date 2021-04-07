@@ -53,6 +53,10 @@ const canvas = document.createElement("canvas");
 canvas.width = 1000;
 canvas.height = 1000;
 
+const options = {
+  fontSize: 50,
+}
+
 // Init the package.
 const textBlock = new CanvasTextBlock(
   canvas, // An HTML Canvas Element
