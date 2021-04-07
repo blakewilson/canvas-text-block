@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Browser Canvas Text Block Example</title>
+</head>
+<body>
+    <div>
+        <canvas id="canvas" width="500" height="500" />
+    </div>
+
+</body>
+    <!-- This script should be copied and bundled with your application using something like Gulp or Browserify -->
+    <script src="./node_modules/canvas-text-block/dist/CanvasTextBlock.js"></script>
+
+    <script>
+        /**
+         * Get a canvas element from the DOM and manipulate it with Canvas Text Block
+         */
+        const canvas1 = document.getElementById('canvas')
+        const canvas1Context = canvas1.getContext('2d')
+
+        canvas1Context.fillStyle = 'black'
+        canvas1Context.fillRect(0, 0, 500, 500)
+
+        const canvas1TextBlock = new CanvasTextBlock(canvas1, 50, 50, 400, 400, {
+            color: '#fff',
+        })
+        canvas1TextBlock.setText('This text block will be rendered to the canvas with a width of 400px, height of 400px, and at position 50, 50')
+    </script>
+
+    <script>
+        /**
+         * You could also programmatically create a canvas and apply Canvas text Block to it.
+         */
+        const canvas2 = document.createElement('canvas')
+        canvas2.width = 500
+        canvas2.height = 500
+
+        const canvas2Context = canvas2.getContext('2d')
+
+        canvas2Context.fillStyle = 'red'
+        canvas2Context.fillRect(0, 0, 500, 500)
+
+        const canvas2TextBlock = new CanvasTextBlock(canvas2, 50, 50, 400, 400)
+        canvas2TextBlock.setText(`This canvas and text block were generated programmatically.`)
+
+        document.body.append(canvas2)
+    </script>
+</html>

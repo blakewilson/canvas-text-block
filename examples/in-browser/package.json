@@ -1,0 +1,8 @@
+{
+  "name": "in-browser",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "canvas-text-block": "^1.0.4"
+  }
+}
