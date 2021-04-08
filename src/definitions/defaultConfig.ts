@@ -5,6 +5,7 @@ const defaultOptions: Required<CanvasTextBlockOptions> = {
   fontFamily: "arial",
   fontSize: 16,
   lineHeight: 24,
+  padding: 0,
   weight: "normal",
   ellipsis: true,
   overflow: false,
