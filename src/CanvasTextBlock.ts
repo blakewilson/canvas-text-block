@@ -76,7 +76,13 @@ class CanvasTextBlock {
   }
 
   private getTextBlockMaxWidth = () => {
-    return this.width;
+    let maxWidth = this.width;
+
+    if (this.options.padding !== 0) {
+      maxWidth = maxWidth - this.options.padding * 2;
+    }
+
+    return maxWidth;
   };
 
   private getOptions = () => {
@@ -84,7 +90,13 @@ class CanvasTextBlock {
   };
 
   private getMaxLineCount = (): number => {
-    return Math.floor(this.height / this.options.lineHeight);
+    let height = this.height;
+
+    if (this.options.padding !== 0) {
+      height = height - this.options.padding * 2;
+    }
+
+    return Math.floor(height / this.options.lineHeight);
   };
 
   private setBackgroundColor = () => {
@@ -92,6 +104,26 @@ class CanvasTextBlock {
       this.context.fillStyle = this.options.backgroundColor;
       this.context.fillRect(this.x, this.y, this.width, this.height);
     }
+  };
+
+  private getStartingLineXPos = () => {
+    let xPos = this.x;
+
+    if (this.options.padding !== 0) {
+      xPos = this.x + this.options.padding;
+    }
+
+    return xPos;
+  };
+
+  private getStartingLineYPos = () => {
+    let yPos = this.y;
+
+    if (this.options.padding !== 0) {
+      yPos = this.y + this.options.padding;
+    }
+
+    return yPos;
   };
 
   setText = (text: string) => {
@@ -121,9 +153,9 @@ class CanvasTextBlock {
        */
       this.context.fillText(
         line,
-        this.x,
+        this.getStartingLineXPos(),
         calculateNextLineYPos(
-          this.y,
+          this.getStartingLineYPos(),
           textMeasurements.actualBoundingBoxAscent,
           this.options.lineHeight,
           index
@@ -212,19 +244,21 @@ class CanvasTextBlock {
 
     lines.push(currentLine);
 
-    // Clip the amount of lines to render depending on the overflow value
-    if (!this.options.overflow) {
-      lines = lines.slice(0, this.getMaxLineCount());
+    if (lines.length > this.getMaxLineCount()) {
+      // Clip the amount of lines to render depending on the overflow value
+      if (!this.options.overflow) {
+        lines = lines.slice(0, this.getMaxLineCount());
 
-      // Add ellipsis to the last line if needed
-      if (this.options.ellipsis && lines.length >= this.getMaxLineCount()) {
-        let lastLine = appendEllipsisToLine(
-          this.context,
-          lines[lines.length - 1],
-          this.width
-        );
+        // Add ellipsis to the last line if needed
+        if (this.options.ellipsis && lines.length >= this.getMaxLineCount()) {
+          let lastLine = appendEllipsisToLine(
+            this.context,
+            lines[lines.length - 1],
+            this.width
+          );
 
-        lines[lines.length - 1] = lastLine;
+          lines[lines.length - 1] = lastLine;
+        }
       }
     }
 

@@ -37,6 +37,7 @@ declare namespace CanvasTextBlock {
     fontFamily?: string;
     fontSize?: number;
     lineHeight?: number;
+    padding?: number;
     weight?: string;
     ellipsis?: boolean;
     overflow?: boolean;
