@@ -18,5 +18,7 @@ test("it should generate a canvas text block with specified line height", () => 
     path.resolve(__dirname, "lineHeightTest.png")
   );
 
-  expect(compareFile).toEqual(canvas.toBuffer());
+  const compare = Buffer.compare(compareFile, canvas.toBuffer());
+
+  expect(compare).toBe(0);
 });

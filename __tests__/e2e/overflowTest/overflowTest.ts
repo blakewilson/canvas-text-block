@@ -18,5 +18,7 @@ test("it should generate a canvas text block with lines overflowing", () => {
 
   const compareFile = readFileSync(path.resolve(__dirname, "overflowTest.png"));
 
-  expect(compareFile).toEqual(canvas.toBuffer());
+  const compare = Buffer.compare(compareFile, canvas.toBuffer());
+
+  expect(compare).toBe(0);
 });
