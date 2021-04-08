@@ -81,6 +81,7 @@ const defaultOptions = {
   fontFamily: "arial", // Set the font family of the text block
   fontSize: 16, // Set the font size in pixels
   lineHeight: 24, // Set the text line height in pixels
+  padding: 50 // The padding around the text box in pixels
   backgroundColor: "transparent", // Set a background color for the text block
   weight: "normal", // Set the font weight
   overflow: false, // Should the package overflow lines that do not fit in the text block
