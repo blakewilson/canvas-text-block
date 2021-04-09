@@ -23,20 +23,20 @@ npm install canvas-text-block
 
 You can import the package as a module:
 
-```bash
-import CanvasTextBlock from 'canvas-text-block'
+```js
+import CanvasTextBlock from "canvas-text-block";
 ```
 
 Or as CommonJS:
 
-```bash
-const CanvasTextBlock = require('canvas-text-block')
+```js
+const CanvasTextBlock = require("canvas-text-block");
 ```
 
 Additionally, there is a UMD build (`/dist/CanvasTextBlock.js`) for use in the browser:
 
 ```html
-<script src="node_modules/canvas-text-block/dist/CanvasTextBlock.js">
+<script src="node_modules/canvas-text-block/dist/CanvasTextBlock.js"></script>
 ```
 
 It is recommended to use something like [Gulp](https://gulpjs.com/) or [Browserify](http://browserify.org/) if you intend on using Canvas Text Block in the browser.
