@@ -13,6 +13,9 @@ git clone git@github.com:blakewilson/canvas-text-block.git
 # cd into the example dir
 cd canvas-text-block/examples/in-browser
 
+# Install deps
+npm install
+
 # Open index.html in the browser
 open index.html
 ```
