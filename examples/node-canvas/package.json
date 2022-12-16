@@ -7,7 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.7.0",
-    "canvas-text-block": "^1.0.4",
+    "canvas-text-block": "^1.1.1",
     "lorem-ipsum": "^2.0.3"
   }
 }
