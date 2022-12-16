@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import CanvasTextBlock from "../src/CanvasTextBlock";
 
 test("it should fail with a text block width larger than the canvas ", () => {
@@ -10,6 +14,6 @@ test("it should fail with a text block width larger than the canvas ", () => {
 
     expect(true).toBe(false);
   } catch (err) {
-    expect(err.name).toBe("WidthLargerThanCanvasWidthError");
+    expect((err as any).name).toBe("WidthLargerThanCanvasWidthError");
   }
 });

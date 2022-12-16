@@ -1,6 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import CanvasTextBlock from "../src/CanvasTextBlock";
 import defaultOptions from "../src/definitions/defaultConfig";
-import { CanvasTextBlockOptions } from "../src/types";
+import type { CanvasTextBlockOptions } from "../src/types";
 
 const canvas = document.createElement("canvas");
 

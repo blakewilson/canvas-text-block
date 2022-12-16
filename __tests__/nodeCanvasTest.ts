@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { createCanvas } from "canvas";
 import CreateTextBlock from "../src/CanvasTextBlock";
 

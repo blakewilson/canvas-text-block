@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import CanvasTextBlock from "../src/CanvasTextBlock";
 
 test("it should fragment a word larger than the max width of the text block", () => {

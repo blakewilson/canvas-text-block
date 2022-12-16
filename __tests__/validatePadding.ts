@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import CanvasTextBlock from "../src/CanvasTextBlock";
 
 const canvas = document.createElement("canvas");
