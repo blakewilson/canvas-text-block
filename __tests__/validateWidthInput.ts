@@ -1,5 +1,5 @@
 /**
- * @jest-environment jsdom
+ * @jest-environment jdom
  */
 
 import CanvasTextBlock from "../src/CanvasTextBlock";
