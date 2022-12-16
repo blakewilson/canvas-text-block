@@ -1,5 +1,5 @@
 import { babel } from "@rollup/plugin-babel";
-import pck from "./package.json";
+import pck from "./package.json" assert { type: "json" };
 import typescript from "rollup-plugin-typescript2";
 import { DEFAULT_EXTENSIONS } from "@babel/core";
 
