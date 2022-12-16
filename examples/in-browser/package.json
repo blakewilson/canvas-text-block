@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "license": "MIT",
   "dependencies": {
-    "canvas-text-block": "^1.1.1"
+    "canvas-text-block": "^1.1.2"
   }
 }
