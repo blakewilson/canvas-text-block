@@ -4,7 +4,7 @@
 
 import CanvasTextBlock from "../src/CanvasTextBlock";
 import defaultOptions from "../src/definitions/defaultConfig";
-import type { CanvasTextBlockOptions } from "../src/types";
+import type { CanvasTextBlockOptions } from "../src/CanvasTextBlock";
 
 const canvas = document.createElement("canvas");
 
