@@ -1,4 +1,4 @@
-import { CanvasTextBlockOptions } from "../types";
+import type { CanvasTextBlockOptions } from "../CanvasTextBlock.js";
 
 const defaultOptions: Required<CanvasTextBlockOptions> = {
   color: "#fff",

@@ -1,4 +1,3 @@
-import type { CanvasTextBlockOptions } from "./types";
 import type {
   Canvas as NodeCanvas,
   CanvasRenderingContext2D as NodeCanvasRenderingContext2D,
@@ -13,7 +12,19 @@ import XPositionOutOfRangeError from "./errors/XPositionOutOfRangeError";
 import YPositionOutOfRangeError from "./errors/YPositionOutOfRangeError";
 import CanvasContextIsNullError from "./errors/CanvasContextIsNullError";
 
-class CanvasTextBlock {
+export type CanvasTextBlockOptions = {
+  color?: string;
+  backgroundColor?: string;
+  fontFamily?: string;
+  fontSize?: number;
+  lineHeight?: number;
+  padding?: number;
+  weight?: string;
+  ellipsis?: boolean;
+  overflow?: boolean;
+}
+
+export default class CanvasTextBlock {
   private canvas: HTMLCanvasElement | NodeCanvas;
   private context: CanvasRenderingContext2D | NodeCanvasRenderingContext2D;
   private x: number;
@@ -252,7 +263,7 @@ class CanvasTextBlock {
         // Add ellipsis to the last line if needed
         if (this.options.ellipsis && lines.length >= this.getMaxLineCount()) {
           let lastLine = appendEllipsisToLine(
-            this.context,
+            this.context as CanvasRenderingContext2D,
             lines[lines.length - 1],
             this.width
           );
@@ -266,6 +277,3 @@ class CanvasTextBlock {
   };
 }
 
-export { CanvasTextBlockOptions };
-
-export default CanvasTextBlock;
