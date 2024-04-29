@@ -5,7 +5,7 @@
   "main": "dist/CanvasTextBlock.common.js",
   "module": "dist/CanvasTextBlock.esm.js",
   "browser": "dist/CanvasTextBlock.js",
-  "types": "types/CanvasTextBlock.d.ts",
+  "types": "dist/CanvasTextBlock.d.ts",
   "homepage": "https://github.com/blakewilson/canvas-text-block",
   "bugs": {
     "url": "https://github.com/blakewilson/canvas-text-block/issues"
@@ -13,8 +13,7 @@
   "files": [
     "dist",
     "LICENSE",
-    "README.md",
-    "types"
+    "README.md"
   ],
   "scripts": {
     "test": "jest",
