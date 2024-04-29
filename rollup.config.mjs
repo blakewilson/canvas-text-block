@@ -1,7 +1,5 @@
-import { babel } from "@rollup/plugin-babel";
 import pck from "./package.json" assert { type: "json" };
-import typescript from "rollup-plugin-typescript2";
-import { DEFAULT_EXTENSIONS } from "@babel/core";
+import typescript from '@rollup/plugin-typescript'
 
 const input = "./src/CanvasTextBlock.ts";
 
@@ -25,9 +23,5 @@ export default {
   ],
   plugins: [
     typescript(),
-    babel({
-      babelHelpers: "bundled",
-      extensions: [...DEFAULT_EXTENSIONS, ".ts"],
-    }),
   ],
 };

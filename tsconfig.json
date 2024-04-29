@@ -1,15 +1,32 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "ESNext",
-    "strict": true,
-    "moduleResolution": "node",
-    "strictNullChecks": true,
+    // Base Options recommended for all projects
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "declaration": false
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    // We are not transpiling, so preserve our source code and do not emit files
+    "module": "preserve",
+    "noEmit": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    // Include the DOM types
+    "lib": [
+      "es2022",
+      "dom",
+      "dom.iterable"
+    ]
   },
-  "include": ["src"],
+  // Include the necessary files for your project
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
