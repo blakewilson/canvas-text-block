@@ -3,7 +3,7 @@
     // Base Options recommended for all projects
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "es2022",
+    "target": "ES5",
     "allowJs": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
@@ -15,7 +15,7 @@
     "declarationDir": "dist",
     // Include the DOM types
     "lib": [
-      "es2022",
+      "ES5",
       "dom",
       "dom.iterable"
     ]
